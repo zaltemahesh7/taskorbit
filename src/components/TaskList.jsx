@@ -24,13 +24,12 @@ const TaskList = () => {
   return (
     <ul>
       {tasks.map((task) => (
-        <li key={task.id} className="flex justify-between items-center mb-2">
+        <li key={task.id} className="flex border p-2 rounded justify-between items-center mb-2">
           <span
             onClick={() => handleToggleTask(task.id)}
-            className={`cursor-pointer flex items-center gap-2 ${task.completed ? 'line-through' : ''}`}
+            className={`cursor-pointer ${task.completed ? 'line-through text-green-700' : ''}`}
           >
-            <input type="checkbox" />
-            {` ${task.text}`}
+            <h1 className={` text-2xl ${task.completed ? 'text-green-700' : ''}`}>{task.text}</h1>
           </span>
           <div>
             <button
