@@ -24,7 +24,7 @@ const TaskList = () => {
   return (
     <ul>
       {tasks.map((task) => (
-        <li key={task.id} className="flex border p-2 rounded justify-between items-center mb-2">
+        <li key={task.id} className="flex p-2 justify-between items-center mb-2">
           <span
             onClick={() => handleToggleTask(task.id)}
             className={`cursor-pointer ${task.completed ? 'line-through text-green-700' : ''}`}

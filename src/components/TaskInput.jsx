@@ -13,21 +13,27 @@ const TaskInput = () => {
     }
   };
 
+  function handleSubmit(e) {
+    e.preventDefault()
+  }
+
   return (
     <div className="mb-4">
-      <input 
-        type="text" 
-        value={task} 
-        onChange={(e) => setTask(e.target.value)} 
-        className="border p-2 rounded w-full"
-        placeholder="Enter a task"
-      />
-      <button 
-        onClick={handleAddTask} 
-        className="bg-blue-500 text-white px-4 py-2 rounded mt-2"
-      >
-        Add Task
-      </button>
+      <form onSubmit={e => handleSubmit(e)}>
+        <input
+          type="text"
+          value={task}
+          onChange={(e) => setTask(e.target.value)}
+          className="border p-2 rounded w-full"
+          placeholder="Enter a task"
+        />
+        <button type='submit'
+          onClick={handleAddTask}
+          className="bg-blue-500 text-white px-4 py-2 rounded mt-2"
+        >
+          Add Task
+        </button>
+      </form>
     </div>
   );
 };
